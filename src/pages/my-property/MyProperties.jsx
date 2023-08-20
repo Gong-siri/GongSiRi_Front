@@ -4,15 +4,13 @@ import PropertyCard from './PropertyCard';
 //import myProperties from '../../__fixtures__/myProperties';
 import { HeaderText } from '../../constants/styles/commonCSS';
 import DropDown from '../../components/DropDown';
-import { getProperties, getSellProperties } from '../../api/main';
-import { getRealty } from '../../api/realty';
+import { getPinnedRealty } from '../../api/realty';
 import { useContext, useEffect, useState, useReducer } from 'react';
 import { REALTY_ACTION_TYPE } from '../../constant/realtyConstant';
 
 export default function MyProperties() {
   const initialState = [];
   const propertyStatusOptions = ['전체매물', '임대중매물', '공실매물'];
-  const [pro, setPro] = useState();
 
   const navigate = useNavigate();
 
@@ -37,11 +35,10 @@ export default function MyProperties() {
   const [realty, dispatch] = useReducer(reducer, initialState);
   const fetchRealtyList = async () => {
     // e.preventDefaul();
-    const res = await getRealty();
+    console.log('핀 체크 리스트 디버깅');
+    const res = await getPinnedRealty();
     if (res) dispatch({ type: REALTY_ACTION_TYPE.GET, realty: res.data });
-    console.log(res.data);
     //setPro(res.data);
-    alert('API 성공');
   };
   useEffect(() => {
     fetchRealtyList();
@@ -64,7 +61,7 @@ export default function MyProperties() {
       <S.Flex>
         {realty.map((realty, index) => (
           // pro 로 수정 (api 호출시)
-
+          // <div key={realty.id}><PropertyCard realty={realty}/></div>
           <PropertyCard realty={realty} key={realty.id} />
         ))}
       </S.Flex>
@@ -112,7 +109,14 @@ const S = {
     justify-content: start;
     height: fit-content;
     overflow: hidden;
+    flex-wrap: wrap; /* 아이템이 가로로 넘칠 경우 줄 바꿈 */
+    /* 아이템 크기를 조절 */
+    > * {
+      flex-basis: calc(
+        25% - 13px
+      ); /* 3개의 아이템을 가로로 정렬하려면 25%로 설정 */
+    }
     gap: 13px;
     label: MyProperty__Flex;
   `,
-};
+}; 
