@@ -1,22 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Modal, Button, Container } from 'react-bootstrap';
 import styles from './ImageUpModal.css';
 //import upload from './asserts/detail/upload.png';
 //import Gangnam from './asserts/detail/Gangnam.jpg';
 
 const ImageUpModal = ({ show, onHide }) => {
+  const setProfileImage = useRef(null);
+  const [profile, setProfile] = useState('/detail/upload.png');
   const [imgBorder, setImageBorder] = useState(false);
+  const [imgFile, setImgFile] = useState('');
+  const imgRef = useRef();
+
+  const imgHandler = async (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImgFile(reader.result);
+      };
+      setProfile(URL.createObjectURL(file));
+      console.log(profile);
+      const formData = new FormData();
+      formData.append('file', file);
+      //const response = await server.post(엔드포인트, formData);
+    }
+  };
+
+  const saveImgFile = () => {
+    const file = imgRef.current.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImgFile(reader.result);
+    };
+  };
+
+  const imgBtnClick = (e) => {
+    e.preventDefault();
+    if (setProfileImage.current) {
+      setProfileImage.current.click();
+    }
+  };
   let className = 'border';
   if (imgBorder) {
     className = 'img_upload_box';
-  }
-
-  function imgClick() {
-    if (!imgBorder) {
-      setImageBorder(true);
-    } else {
-      setImageBorder(false);
-    }
   }
 
   return (
@@ -36,13 +65,22 @@ const ImageUpModal = ({ show, onHide }) => {
         <Modal.Body style={{ minHeight: '40vh' }}>
           <div className="img_list">
             <div className={className}>
-              <img src="/detail/Gangnam.jpg" alt="upload" />
+              <img src="/detail/Gangnam.jpg" alt="up" />
             </div>
 
             {[1, 2, 3].map(function () {
               return (
                 <div className="img_upload_space">
-                  <img src="/detail/upload.png" alt="upload" />
+                  {/* <img src="/detail/upload.png" alt="upload" /> */}
+                  <input
+                    ref={setProfileImage}
+                    className={styles.imgInput}
+                    type={'file'}
+                    id={'profile'}
+                    accept={'image/*'}
+                    name={'file'}
+                    onChange={imgHandler}
+                  />
                 </div>
               );
             })}
@@ -50,7 +88,15 @@ const ImageUpModal = ({ show, onHide }) => {
             {[1, 2, 3, 4].map(function () {
               return (
                 <div className="img_space">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="profileImg"
+                    onChange={saveImgFile}
+                    ref={imgRef}
+                  />
                   <img src="/detail/upload.png" alt="upload" />
+                  <button onClick={imgBtnClick}>사진 업로드</button>
                 </div>
               );
             })}
@@ -58,6 +104,10 @@ const ImageUpModal = ({ show, onHide }) => {
             {[1, 2, 3, 4].map(function () {
               return (
                 <div className="img_space">
+                  <img
+                    src={imgFile ? imgFile : `/images/icon/user.png`}
+                    alt="프로필 이미지"
+                  />
                   <img src="/detail/upload.png" alt="upload" />
                 </div>
               );

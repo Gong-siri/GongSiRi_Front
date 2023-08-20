@@ -5,7 +5,7 @@ const Button = ({ ...rest }) => {
 };
 
 const StyledButton = styled.button`
-  padding: 8px;
+  /* padding: 8px; */
   border: 2px solid #fb923c;
   background-color: transparent;
   border-radius: 4px;
@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   align-items: center;
   flex-shrink: 0;
   gap: 8px;
-  margin-right: 80px;
+  /*  margin-right: 80px; */
 
   &:hover {
     background-color: #fb923c;

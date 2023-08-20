@@ -294,8 +294,8 @@ input:checked + .slider:before {
   font-size: 15px;
   font-family: Pretendard;
   font-weight: 700;
-  word-wrap: break-word;
-  text-decoration: underline;
+  /*   word-wrap: break-word;
+  text-decoration: underline; */
 }
 
 .rental13 {
@@ -303,8 +303,11 @@ input:checked + .slider:before {
   font-size: 15px;
   font-family: Pretendard;
   font-weight: 700;
-  word-wrap: break-word;
-  text-decoration: underline;
+  margin-left: -30px;
+  margin-top: -2px;
+
+  /* word-wrap: break-word; */
+  /*  text-decoration: underline; */
 }
 .rental14 {
   left: 1008px;
@@ -318,17 +321,18 @@ input:checked + .slider:before {
   font-size: 15px;
   font-family: Pretendard;
   font-weight: 700;
-  word-wrap: break-word;
-  text-decoration: underline;
+  /*  word-wrap: break-word;
+  text-decoration: underline; */
 }
 
 .images1 {
   color: #3f3f3f;
   font-size: 15px;
   font-family: Pretendard;
-  font-weight: 700;
-  word-wrap: break-word;
-  text-decoration: underline;
+  font-weight: 500;
+  margin-right: 30px;
+  /*  word-wrap: break-word;
+  text-decoration: underline; */
 }
 .images2 {
   left: 807px;
@@ -376,8 +380,8 @@ input:checked + .slider:before {
   border: 1px #d9d9d9 solid;
 }
 .facility1 {
-  left: 496px;
-  top: 550px;
+  left: 430px;
+  top: 555px;
   position: absolute;
   justify-content: flex-end;
   align-items: center;

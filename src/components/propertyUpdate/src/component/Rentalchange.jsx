@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RentUpModal from '../modals/RentUpModal';
-import { Button } from 'react-bootstrap';
+/* import { Button } from 'react-bootstrap'; */
+import Button from '../../../common/Button';
 import './RentalChange.css';
 const Rentalchange = () => {
   const [rentUpModalOn, setRentUpModalOn] = useState(false);

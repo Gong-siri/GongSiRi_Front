@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ImageUpModal from '../modals/ImageUpModal';
-import { Button } from 'react-bootstrap';
+/* import { Button } from 'react-bootstrap'; */
+import Button from '../../../common/Button';
 
 const BuildingImage = () => {
   const [imageUpModalOn, setImageUpModalOn] = useState(false);

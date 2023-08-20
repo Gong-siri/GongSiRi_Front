@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FacilityUpModal from '../modals/FacilityUpModal';
-import { Button } from 'react-bootstrap';
+/* import { Button } from 'react-bootstrap'; */
+import Button from '../../../common/Button';
 
 const FacilityChange = () => {
   const [facilityUpModalOn, setFacilityUpModalOn] = useState(false);
