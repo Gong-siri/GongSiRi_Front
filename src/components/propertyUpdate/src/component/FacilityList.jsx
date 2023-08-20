@@ -1,10 +1,10 @@
-import React from "react";
-import parking_lot from './images/parking_lot.jpeg'
-import fire_extinguisher from './images/fire_extinguisher.png'
-import toilet from './images/toilet.png'
-import no_smoking from './images/no_smoking.png'
-import elevator from './images/elevator.jpeg'
-import sink from './images/sink.png'
+import React from 'react';
+import parking_lot from './images/parking_lot.jpeg';
+import fire_extinguisher from './images/fire_extinguisher.png';
+import toilet from './images/toilet.png';
+import no_smoking from './images/no_smoking.png';
+import elevator from './images/elevator.jpeg';
+import sink from './images/sink.png';
 const FacilityList = () => {
   return (
     <div>
@@ -45,12 +45,7 @@ const FacilityList = () => {
               </div>
             </div>
             <div className="facility6">
-              <img
-                src={no_smoking}
-                width="21.028"
-                height="21.016"
-                alt=""
-              ></img>
+              <img src={no_smoking} width="21.028" height="21.016" alt=""></img>
               <div className="facility7">
                 <div className="facility8">금연구역</div>
               </div>
@@ -58,23 +53,13 @@ const FacilityList = () => {
           </div>
           <div className="facility_next">
             <div className="facility6">
-              <img
-                src={elevator}
-                width="21.22"
-                height="18.015"
-                alt=""
-              ></img>
+              <img src={elevator} width="21.22" height="18.015" alt=""></img>
               <div className="facility7">
                 <div className="facility8">엘리베이터</div>
               </div>
             </div>
             <div className="facility6">
-              <img
-                src="./img/sink.png"
-                width="20.96"
-                height="18.522"
-                alt=""
-              ></img>
+              <img src={sink} width="20.96" height="18.522" alt=""></img>
               <div className="facility7">
                 <div className="facility8">싱크대</div>
               </div>
