@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import Pin from '../../components/Pin';
+// import { border } from "../../constants/styles/commonCSS";
 import { border } from '../../constants/styles/commonCSS';
 import VacantAdvertisingBadge from '../../components/badges/VacantAdvertisingBadge';
 import RentalStatusBadge from '../../components/badges/RentalStatusBadge';
-
+import { useNavigate } from 'react-router-dom';
 export default function PropertyCard({ realty }) {
   const { id, name, pinned, vacantAdvertising } = realty;
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.Image>
@@ -21,7 +23,12 @@ export default function PropertyCard({ realty }) {
         <S.Title>
           {name} {/* 매물 이름 출력 */}
         </S.Title>
-        <S.Button>
+        <S.Button
+          type="button"
+          onClick={() => {
+            navigate(`/detail/${id}`);
+          }}
+        >
           매물 게시 정보 변경
           <S.Arrow />
         </S.Button>
@@ -40,9 +47,6 @@ const S = {
     height: 316px;
     cursor: pointer;
     label: PropertyCard__Container;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
   `,
   Image: styled.div`
     background-color: #d9d9d9;
