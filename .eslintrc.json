@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "eslint:recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "react/react-in-jsx-scope": ["off", "error"],
+  "rules": {
+    // "no-param-reassign": "off",
+    // "import/no-extraneous-dependencies": ["off"],
+    // "react/jsx-uses-react": ["off"],
+    // "react/react-in-jsx-scope": ["off"],
+    // "react/jsx-props-no-spreading": ["warn"],
+    // "react/function-component-definition": [
+    //   2,
+    //   { "namedComponents": "arrow-function" }
+    // ],
+    // "no-shadow": "off",
+    // "import/prefer-default-export": "off",
+    // "react/prop-types": "off",
+    // "no-unused-vars": "warn",
+   "jsx-a11y/label-has-associated-control": [2,
+      {
+       "labelAttributes": ["htmlFor", "inputLabel"],
+       "labelComponents": ["CustomLabel"],
+       "controlComponents": ["CustomInput"],
+       "assert": "both",
+        "depth": 3
+      }],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-console": "off",
+    "react/function-component-definition": "off",
+    "react/prop-types": "off"
+  }
+}
