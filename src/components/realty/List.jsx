@@ -34,19 +34,18 @@ const List = ({ realty: { id, name, pinned }, realtyDispatch }) => {
 };
 
 const RealtyList = styled.li`
-  width: 100%;
+  width: 85%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 4px;
   margin-bottom: 8px;
   padding: 20px;
-  margin: 0 8px;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   background-color: #f3f4f6;
   color: #4b5563;
-  margin: 20px;
+  margin-bottom: 35px;
+  margin-right: 211px;
 `;
 
 const CheckInputWrapper = styled.div`
