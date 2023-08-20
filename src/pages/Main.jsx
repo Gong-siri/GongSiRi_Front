@@ -20,9 +20,9 @@ export default function Main() {
       </S.Flex>
       {/* 나의 매물 */}
       <MyProperties />
-    </S.Container >
+    </S.Container>
   );
-};
+}
 
 const S = {
   Container: styled.div`
@@ -40,9 +40,10 @@ const S = {
   `,
   Logo: styled.div`
     position: absolute;
-    top: 38px; 
+    top: 38px;
     transform: translateX(780%);
     width: 119.69px;
     height: 25.54px;
+    left: 230px;
   `,
-}
+};

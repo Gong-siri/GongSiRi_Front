@@ -50,6 +50,7 @@ const S = {
     display: flex;
     align-items: center;
     label: RentalStatus__DropDownContainer;
+    margin-top: -7px;
   `,
   StatusList: styled.div`
     display: flex;
