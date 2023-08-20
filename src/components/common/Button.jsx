@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   align-items: center;
   flex-shrink: 0;
   gap: 8px;
+  margin-right: 80px;
 
   &:hover {
     background-color: #fb923c;
