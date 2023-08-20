@@ -1,0 +1,48 @@
+.img_list {
+  width: 115%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img_upload_box {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 17px;
+  border-style: solid;
+  border-color: #11b7e4;
+}
+
+.border {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 17px;
+}
+
+.img_upload {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img_upload_space {
+  width: 11%;
+  float: left;
+  margin-left: 100px;
+  margin-right: 7px;
+  margin-bottom: 20px;
+}
+
+.img_space {
+  width: 20%;
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.img_btn {
+  margin-bottom: auto;
+  background-color: #11b7e4;
+}
