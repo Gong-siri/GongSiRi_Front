@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Modal, Button, Container, Form } from "react-bootstrap";
-import styles from "./ImageUpModal.css";
+import React, { useState } from 'react';
+import { Modal, Button, Container, Form } from 'react-bootstrap';
+import styles from './ImageUpModal.css';
 
 const RentUpModal = ({ show, onHide }) => {
   return (
@@ -18,22 +18,22 @@ const RentUpModal = ({ show, onHide }) => {
           </Modal.Title>
         </Modal.Header>
 
-        <Modal.Body style={{ minHeight: "40vh" }}>
+        <Modal.Body style={{ minHeight: '40vh' }}>
           <div
             style={{
-              color: "#818181",
+              color: '#818181',
               fontSize: 20,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
-              background: "#F4F4F4",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
+              background: '#F4F4F4',
               borderRadius: 6,
-              border: "1px #E9E9E9 solid",
+              border: '1px #E9E9E9 solid',
               paddingLeft: 7,
               paddingRight: 7,
               paddingTop: 3,
               paddingBottom: 3,
-              display: "inline-flex",
+              display: 'inline-flex',
             }}
           >
             월세
@@ -41,19 +41,19 @@ const RentUpModal = ({ show, onHide }) => {
 
           <div
             style={{
-              color: "#3F3F3F",
+              color: '#3F3F3F',
               fontSize: 15,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
               paddingLeft: 7,
               paddingRight: 7,
               paddingTop: 6,
               paddingBottom: 6,
-              background: "#EBFFE1",
+              background: '#EBFFE1',
               borderRadius: 6,
-              display: "inline-flex",
-              position: "absolute",
+              display: 'inline-flex',
+              position: 'absolute',
               left: 90,
               top: 18,
             }}
@@ -66,13 +66,13 @@ const RentUpModal = ({ show, onHide }) => {
             style={{
               left: 650,
               top: 15,
-              position: "absolute",
-              textAlign: "right",
-              color: "#3F3F3F",
+              position: 'absolute',
+              textAlign: 'right',
+              color: '#3F3F3F',
               fontSize: 25,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
             }}
           >
             원
@@ -86,18 +86,18 @@ const RentUpModal = ({ show, onHide }) => {
               paddingBottom: 3,
               left: 15,
               top: 120,
-              color: "#818181",
+              color: '#818181',
               fontSize: 20,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
-              display: "inline-flex",
-              background: "#F4F4F4",
-              position: "absolute",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
+              display: 'inline-flex',
+              background: '#F4F4F4',
+              position: 'absolute',
               borderRadius: 6,
-              border: "1px #E9E9E9 solid",
-              justifyContent: "center",
-              alignItems: "center",
+              border: '1px #E9E9E9 solid',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             일세
@@ -105,24 +105,24 @@ const RentUpModal = ({ show, onHide }) => {
 
           <div
             style={{
-              color: "#3F3F3F",
+              color: '#3F3F3F',
               fontSize: 15,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
               paddingLeft: 7,
               paddingRight: 7,
               paddingTop: 6,
               paddingBottom: 6,
               left: 90,
               top: 123,
-              position: "absolute",
-              background: "#CBECFF",
+              position: 'absolute',
+              background: '#CBECFF',
               borderRadius: 6,
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: 'center',
+              alignItems: 'center',
               gap: 9,
-              display: "inline-flex",
+              display: 'inline-flex',
             }}
           >
             주변보다 낮음 &nbsp;&nbsp;&nbsp;&nbsp; 900,000 &nbsp;
@@ -133,13 +133,13 @@ const RentUpModal = ({ show, onHide }) => {
             style={{
               left: 650,
               top: 123,
-              position: "absolute",
-              textAlign: "right",
-              color: "#3F3F3F",
+              position: 'absolute',
+              textAlign: 'right',
+              color: '#3F3F3F',
               fontSize: 25,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
             }}
           >
             원
@@ -147,25 +147,25 @@ const RentUpModal = ({ show, onHide }) => {
 
           <div
             style={{
-              color: "#818181",
+              color: '#818181',
               fontSize: 20,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
               paddingLeft: 7,
               paddingRight: 7,
               paddingTop: 3,
               paddingBottom: 3,
               left: 14,
               top: 230,
-              position: "absolute",
-              background: "#F4F4F4",
+              position: 'absolute',
+              background: '#F4F4F4',
               borderRadius: 6,
-              border: "1px #E9E9E9 solid",
-              justifyContent: "center",
-              alignItems: "center",
+              border: '1px #E9E9E9 solid',
+              justifyContent: 'center',
+              alignItems: 'center',
               gap: 9,
-              display: "inline-flex",
+              display: 'inline-flex',
             }}
           >
             시세
@@ -173,24 +173,24 @@ const RentUpModal = ({ show, onHide }) => {
 
           <div
             style={{
-              color: "#3F3F3F",
+              color: '#3F3F3F',
               fontSize: 15,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
               paddingLeft: 7,
               paddingRight: 7,
               paddingTop: 6,
               paddingBottom: 6,
               left: 90,
               top: 232,
-              position: "absolute",
-              background: "#EBFFE1",
+              position: 'absolute',
+              background: '#EBFFE1',
               borderRadius: 6,
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: 'center',
+              alignItems: 'center',
               gap: 9,
-              display: "inline-flex",
+              display: 'inline-flex',
             }}
           >
             주변보다 낮음 &nbsp;&nbsp;&nbsp;&nbsp; 900,000 &nbsp;
@@ -201,13 +201,13 @@ const RentUpModal = ({ show, onHide }) => {
             style={{
               left: 650,
               top: 230,
-              position: "absolute",
-              textAlign: "right",
-              color: "#3F3F3F",
+              position: 'absolute',
+              textAlign: 'right',
+              color: '#3F3F3F',
               fontSize: 25,
-              fontFamily: "Pretendard",
-              fontWeight: "700",
-              wordWrap: "break-word",
+              fontFamily: 'Pretendard',
+              fontWeight: '700',
+              wordWrap: 'break-word',
             }}
           >
             원
