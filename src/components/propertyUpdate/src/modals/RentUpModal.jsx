@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { Modal, Button, Container, Form } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 import styles from './ImageUpModal.css';
 
-const RentUpModal = ({ show, onHide }) => {
+const RentUpModal = ({ show, onHide, id }) => {
+  const [month, setMonth] = useState(0);
+  const [day, setDay] = useState(0);
+  const [hour, setHour] = useState(0);
+
   return (
     <Modal
       show={show}
@@ -34,11 +39,14 @@ const RentUpModal = ({ show, onHide }) => {
               paddingTop: 3,
               paddingBottom: 3,
               display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 9,
+              display: 'inline-flex',
             }}
           >
             월세
           </div>
-
           <div
             style={{
               color: '#3F3F3F',
@@ -61,7 +69,16 @@ const RentUpModal = ({ show, onHide }) => {
             주변보다 높음 &nbsp;&nbsp;&nbsp; 1,000,000 &nbsp;
             <img src="./img/Polygon 1.png" width="9" height="9" />
           </div>
-
+          <div style={{ top: 10, left: 300, position: 'absolute' }}>
+            <input type="text" class="body-contents" id="contents" />
+            <textarea
+              class="body-contents"
+              id="text-contents"
+              style={{ width: 350, height: 40 }}
+              value={month}
+              onChange={(e) => setMonth(e.target.value)}
+            ></textarea>
+          </div>
           <div
             style={{
               left: 650,
@@ -128,7 +145,16 @@ const RentUpModal = ({ show, onHide }) => {
             주변보다 낮음 &nbsp;&nbsp;&nbsp;&nbsp; 900,000 &nbsp;
             <img src="./img/Polygon 2.png" width="9" height="9" />
           </div>
-
+          <div style={{ top: 120, left: 300, position: 'absolute' }}>
+            <input type="text" class="body-contents" id="contents" />
+            <textarea
+              class="body-contents"
+              id="text-contents"
+              style={{ width: 350, height: 40 }}
+              value={day}
+              onChange={(e) => setDay(e.target.value)}
+            ></textarea>
+          </div>
           <div
             style={{
               left: 650,
@@ -196,7 +222,16 @@ const RentUpModal = ({ show, onHide }) => {
             주변보다 낮음 &nbsp;&nbsp;&nbsp;&nbsp; 900,000 &nbsp;
             <img src="./img/Polygon 1.png" width="9" height="9" />
           </div>
-          <input type="text" placeholder="임대료"></input>
+          <div style={{ top: 230, left: 300, position: 'absolute' }}>
+            <input type="text" class="body-contents" id="contents" />
+            <textarea
+              class="body-contents"
+              id="text-contents"
+              style={{ width: 350, height: 40 }}
+              value={hour}
+              onChange={(e) => setHour(e.target.value)}
+            ></textarea>
+          </div>
           <div
             style={{
               left: 650,
@@ -216,7 +251,13 @@ const RentUpModal = ({ show, onHide }) => {
       </Container>
       <Container>
         <Modal.Footer>
-          <Button className="rent_btn" block variant="info" type="button">
+          <Button
+            className="rent_btn"
+            block
+            variant="info"
+            type="button"
+            onClick={onHide}
+          >
             임대료 변경 완료
           </Button>
         </Modal.Footer>

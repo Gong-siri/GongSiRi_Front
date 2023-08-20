@@ -330,7 +330,7 @@ input:checked + .slider:before {
   font-size: 15px;
   font-family: Pretendard;
   font-weight: 500;
-  margin-right: 30px;
+  margin-left: -12px;
   /*  word-wrap: break-word;
   text-decoration: underline; */
 }

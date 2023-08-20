@@ -33,16 +33,26 @@
   margin-right: 7px;
   margin-bottom: 20px;
 }
-
+/* 
 .img_space {
-  width: 20%;
+  width: 100%;
   float: left;
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 20px;
+} */
+
+.img_space img {
+  width: 30%;
+  height: 30%;
+  margin-left: 230px;
 }
 
-.img_btn {
-  margin-bottom: auto;
-  background-color: #11b7e4;
+.btn12345 {
+  margin-left: 145px;
+  margin-top: 25px;
 }
+/* .img_btn {
+  margin: auto;
+  background-color: #11b7e4;
+} */

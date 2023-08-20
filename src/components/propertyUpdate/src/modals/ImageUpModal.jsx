@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Modal, Button, Container } from 'react-bootstrap';
+import { Modal, Container } from 'react-bootstrap';
 import styles from './ImageUpModal.css';
+import Button from '../../../common/Button';
 //import upload from './asserts/detail/upload.png';
 //import Gangnam from './asserts/detail/Gangnam.jpg';
 
@@ -64,60 +65,40 @@ const ImageUpModal = ({ show, onHide }) => {
         </Modal.Header>
         <Modal.Body style={{ minHeight: '40vh' }}>
           <div className="img_list">
-            <div className={className}>
-              <img src="/detail/Gangnam.jpg" alt="up" />
+            <div className="img_space">
+              <input
+                type="file"
+                accept="image/*"
+                id="profileImg"
+                onChange={saveImgFile}
+                ref={imgRef}
+              />
+
+              <img
+                src={imgFile ? imgFile : `/detail/upload.png`}
+                alt="프로필 이미지"
+              />
+              <div className="btn12345">
+                <button className="btn12345" onClick={imgBtnClick}>
+                  사진 업로드
+                </button>
+              </div>
+              <input
+                ref={setProfileImage}
+                className={styles.imgInput}
+                type={'file'}
+                id={'profile'}
+                accept={'image/*'}
+                name={'file'}
+                onChange={imgHandler}
+              />
             </div>
-
-            {[1, 2, 3].map(function () {
-              return (
-                <div className="img_upload_space">
-                  {/* <img src="/detail/upload.png" alt="upload" /> */}
-                  <input
-                    ref={setProfileImage}
-                    className={styles.imgInput}
-                    type={'file'}
-                    id={'profile'}
-                    accept={'image/*'}
-                    name={'file'}
-                    onChange={imgHandler}
-                  />
-                </div>
-              );
-            })}
-
-            {[1, 2, 3, 4].map(function () {
-              return (
-                <div className="img_space">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="profileImg"
-                    onChange={saveImgFile}
-                    ref={imgRef}
-                  />
-                  <img src="/detail/upload.png" alt="upload" />
-                  <button onClick={imgBtnClick}>사진 업로드</button>
-                </div>
-              );
-            })}
-
-            {[1, 2, 3, 4].map(function () {
-              return (
-                <div className="img_space">
-                  <img
-                    src={imgFile ? imgFile : `/images/icon/user.png`}
-                    alt="프로필 이미지"
-                  />
-                  <img src="/detail/upload.png" alt="upload" />
-                </div>
-              );
-            })}
           </div>{' '}
         </Modal.Body>
       </Container>
       <Container>
         <Modal.Footer>
-          <Button className="img_btn" block variant="info" type="button">
+          <Button /* className="img_btn" */ block variant="info" type="button">
             대표 이미지 변경 완료
           </Button>
         </Modal.Footer>
