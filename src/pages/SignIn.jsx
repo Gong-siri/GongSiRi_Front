@@ -56,7 +56,7 @@ const BannerText = styled.div`
   transform: translate(-50%, -50%); /* 핵심코드 */
   font-size: x-large;
   color: white;
-  font-family: 'IBM Plex Sans KR';
+  font-family: 'Pretendard';
 `;
 
 const ImageWrapper = styled.div`
