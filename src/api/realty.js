@@ -9,3 +9,7 @@ export const getRealty = async () => {
 export const getPinnedRealty = async () => {
   return axiosInstance.get('/realty/pinned');
 };
+
+export const updateRealty = async (id, name, pinned) => {
+  return axiosInstance.put(`/realty/${id}`, { name, pinned });
+};

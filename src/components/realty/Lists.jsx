@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import List from './List';
 
 const Lists = ({ realty, realtyDispatch }) => {
