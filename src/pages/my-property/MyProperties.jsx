@@ -86,8 +86,8 @@ const S = {
   `,
   Button: styled.button`
     display: flex;
-    width: 141px;
-    height: 40px;
+    width: 145px;
+    height: 45px;
     border-radius: 10px;
     padding: 0 13px;
     margin-left: auto;
@@ -119,4 +119,4 @@ const S = {
     gap: 13px;
     label: MyProperty__Flex;
   `,
-}; 
+};

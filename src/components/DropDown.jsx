@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 import { lightBorder } from '../constants/styles/commonCSS';
 
-export default function DropDown({options}) {
+export default function DropDown({ options }) {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [openOptions, setOpenOptions] = useState(false);
 
@@ -16,7 +16,7 @@ export default function DropDown({options}) {
     setOpenOptions(false);
   };
   // 선택되지 않은 옵션
-  const restOptions = options.filter(option => option !== selectedOption);
+  const restOptions = options.filter((option) => option !== selectedOption);
 
   return (
     <S.Container open={openOptions}>
@@ -28,22 +28,20 @@ export default function DropDown({options}) {
       </S.TextContainer>
       {openOptions && (
         <S.OptionsContainer>
-          {
-            restOptions.map((option, index) => (
-              <S.Option
-                key={index}
-                isLast={index === restOptions.length - 1}
-                onClick={() => handleClickOption(option)}
-              >
-                {option}
-              </S.Option>
-            ))
-          }
+          {restOptions.map((option, index) => (
+            <S.Option
+              key={index}
+              isLast={index === restOptions.length - 1}
+              onClick={() => handleClickOption(option)}
+            >
+              {option}
+            </S.Option>
+          ))}
         </S.OptionsContainer>
       )}
     </S.Container>
   );
-};
+}
 
 const S = {
   Container: styled.div`
@@ -54,7 +52,7 @@ const S = {
     height: 40px;
     padding: 10px 9px;
     ${lightBorder}
-    border-radius: ${props => (props.open ? '10px 10px 0 0' : '10px')};
+    border-radius: ${(props) => (props.open ? '10px 10px 0 0' : '10px')};
     label: DropDown__Container;
   `,
   TextContainer: styled.div`
@@ -62,7 +60,7 @@ const S = {
     align-items: center;
     justify-content: space-between;
     color: #818181;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     label: DropDown__TextContainer;
@@ -70,7 +68,7 @@ const S = {
   IconContainer: styled.div`
     label: DropDown__IconContainer;
   `,
-   OptionsContainer: styled.div`
+  OptionsContainer: styled.div`
     width: 106px;
     position: absolute;
     top: 100%;
@@ -79,8 +77,8 @@ const S = {
     z-index: 1;
     border-radius: 0 0 10px 10px;
     label: DropDown__OptionsContainer;
-    `,
- Option: styled.div`
+  `,
+  Option: styled.div`
     padding: 10px 9px;
     background-color: #f5f5f5;
     color: #818181;
@@ -90,10 +88,10 @@ const S = {
     text-align: start;
     height: 40px;
     ${lightBorder}
-    border-radius: ${props => (props.isLast ? '0 0 10px 10px' : '0')};
+    border-radius: ${(props) => (props.isLast ? '0 0 10px 10px' : '0')};
     &:hover {
       background-color: #e3e3e3;
     }
     label: DropDown__Option;
- `
+  `,
 };

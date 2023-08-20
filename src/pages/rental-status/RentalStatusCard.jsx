@@ -1,13 +1,14 @@
 import Icon from '../../components/Icon';
-import Badge from "../../components/badges/Badge";
-import ProgressBar from "../../components/ProgressBar";
-import RentalDate from "./RentalDate";
-import styled from "@emotion/styled";
-import { border } from "../../constants/styles/commonCSS";
+import Badge from '../../components/badges/Badge';
+import ProgressBar from '../../components/ProgressBar';
+import RentalDate from './RentalDate';
+import styled from '@emotion/styled';
+import { border } from '../../constants/styles/commonCSS';
 
-export default function RentalStatusCard({item}) {
-  const { type, name, rentalStartDate, rentalExpirationDate, progressPoint } = item;
-  
+export default function RentalStatusCard({ item }) {
+  const { type, name, rentalStartDate, rentalExpirationDate, progressPoint } =
+    item;
+
   // 임대 기간 일 수 계산 함수 : 혹시나 필요할까 넣어둠
   const getPeriod = (rentalStartDate, rentalExpirationDate) => {
     const startDate = new Date(rentalStartDate);
@@ -18,7 +19,7 @@ export default function RentalStatusCard({item}) {
     return periodDay;
   };
 
-  // 계산 후 텍스트로 표시 
+  // 계산 후 텍스트로 표시
   const periodDay = getPeriod(rentalStartDate, rentalExpirationDate);
 
   const badgeText = `임대일 ${periodDay}일 남음`;
@@ -27,11 +28,9 @@ export default function RentalStatusCard({item}) {
     <S.Container>
       <S.Row1>
         {/* 임대 현황 icon */}
-        <Icon type={type}/>
+        <Icon type={type} />
         {/* 매물 이름 */}
-        <S.TextContainer>
-          {name}
-        </S.TextContainer>
+        <S.TextContainer>{name}</S.TextContainer>
         {/* 임대 기간 */}
         <S.BadgeContainer>
           <Badge
@@ -45,12 +44,12 @@ export default function RentalStatusCard({item}) {
       {/* 상태 진행 Bar %로 나타난 부분 */}
       <ProgressBar point={progressPoint} />
       <S.Row2>
-        <RentalDate text={"임대만료"} date={rentalExpirationDate} />
-        <RentalDate text={"임대시작"} date={rentalStartDate} />
+        <RentalDate text={'임대만료'} date={rentalExpirationDate} />
+        <RentalDate text={'임대시작'} date={rentalStartDate} />
       </S.Row2>
     </S.Container>
   );
-};
+}
 
 const S = {
   Container: styled.div`

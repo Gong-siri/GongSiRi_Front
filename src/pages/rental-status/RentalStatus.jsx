@@ -10,32 +10,28 @@ export default function RentalStatus() {
     <S.Container>
       {/* 상단 헤더 */}
       <S.Flex>
-        <HeaderText>
-          임대현황
-        </HeaderText>
+        <HeaderText>임대현황</HeaderText>
         {/* DropDown 컴포넌트 */}
         <S.DropDownContainer>
-          <DropDown options={rentalStatusOrders}/>
+          <DropDown options={rentalStatusOrders} />
         </S.DropDownContainer>
       </S.Flex>
 
       {/* 임대현황 아이템 목록 */}
       <S.StatusList>
-        {
-          rentalStatusItems.map((item, index) => (
-            <S.StatusListItem>
-              <S.Line />
-              <S.Circle />
-              <S.CardContainer>
-                <RentalStatusCard item={item} />
-              </S.CardContainer>
-            </S.StatusListItem>
-          ))
-        }
+        {rentalStatusItems.map((item, index) => (
+          <S.StatusListItem>
+            <S.Line />
+            <S.Circle />
+            <S.CardContainer>
+              <RentalStatusCard item={item} />
+            </S.CardContainer>
+          </S.StatusListItem>
+        ))}
       </S.StatusList>
     </S.Container>
   );
-};
+}
 
 const S = {
   Container: styled.div`
@@ -62,7 +58,7 @@ const S = {
     width: 625px;
     height: 371px;
     overflow-y: auto;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     ${border}
     label: RentalStatus__StatusList;
   `,
@@ -83,17 +79,17 @@ const S = {
   Line: styled.div`
     width: 2px;
     height: 100%;
-    background-color: #E9E9E9;
+    background-color: #e9e9e9;
     label: RentalStatus__Line;
   `,
   Circle: styled.div`
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 2px solid #E9E9E9;
+    border: 2px solid #e9e9e9;
     left: -6.5px;
     border-radius: 999px;
-    background-color: #CBECFF;
+    background-color: #cbecff;
     label: RentalStatus__Circle;
   `,
   CardContainer: styled.div`
