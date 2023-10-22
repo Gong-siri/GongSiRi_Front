@@ -4,6 +4,7 @@ import RentalContractProgress from './rental-contract-progress/RentalContractPro
 import RentalStatus from './rental-status/RentalStatus';
 import MyProperties from './my-property/MyProperties';
 
+
 export default function Main() {
   return (
     <S.Container>
@@ -12,6 +13,7 @@ export default function Main() {
         <img src="/images/icons/gongsiri.png" alt="gongsiri"></img>
       </S.Logo>
       <Header />
+
       <S.Flex>
         {/* 임대계약 진행 상황*/}
         <RentalContractProgress />
