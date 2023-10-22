@@ -20,15 +20,15 @@ const Router = () => {
           <Route
             path="/"
             exact
-            element={token ? <Navigate to="/todo" replace /> : <SignIn />}
+            element={token ? <Navigate to="/main" replace /> : <SignIn />}
           />
           <Route
             path="/signin"
-            element={token ? <Navigate to="/todo" replace /> : <SignIn />}
+            element={token ? <Navigate to="/main" replace /> : <SignIn />}
           />
           <Route
             path="/signup"
-            element={token ? <Navigate to="/todo" replace /> : <SignUp />}
+            element={token ? <Navigate to="/main" replace /> : <SignUp />}
           />
           <Route
             path="/todo"
@@ -41,14 +41,17 @@ const Router = () => {
           <Route
             path="/main"
             element={token ? <Main /> : <Navigate to="/signin" replace />}
-          />$
+          />
+          $
           <Route
             path="/detail/:id"
-            element={token ? <PropertyUpdate />: <Navigate to="/signin" replace /> }
+            element={
+              token ? <PropertyUpdate /> : <Navigate to="/signin" replace />
+            }
           />
           <Route
             path="*"
-            element={token ? <Todo /> : <Navigate to="/signin" replace />}
+            element={token ? <Realty /> : <Navigate to="/signin" replace />}
           />
         </Route>
       </Routes>

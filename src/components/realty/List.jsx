@@ -2,19 +2,24 @@
 import styled from 'styled-components';
 import { REALTY_ACTION_TYPE } from '../../constant/realtyConstant';
 import { updateRealty } from '../../api/realty';
+import { useState } from 'react';
 
 const List = ({ realty: { id, name, pinned }, realtyDispatch }) => {
   //const [isSelected, setIsSelected] = useState(false);
 
-  const handleCheckBox = async (id, name, pinned) => {
-    const res = await updateRealty(id, name, !pinned);
+  const [isPinned, setIsPinned] = useState(pinned);
+
+  const handleCheckBox = async (id, name, isPinned) => {
+    const updatedPinned = !isPinned;
+    setIsPinned(updatedPinned); // 상태를 변경
+    const res = await updateRealty(id, name, updatedPinned);
     console.log(res);
     if (res.status === 200) {
-      realtyDispatch({
-        type: REALTY_ACTION_TYPE.UPDATE,
-        id,
-        name: res.data,
-      });
+      // realtyDispatch({
+      //   type: REALTY_ACTION_TYPE.UPDATE,
+      //   id,
+      //   name: res.data,
+      // });
     }
   };
 
@@ -24,10 +29,10 @@ const List = ({ realty: { id, name, pinned }, realtyDispatch }) => {
       <CheckInputWrapper>
         <input
           type="checkbox"
-          checked={pinned}
-          onChange={() => handleCheckBox(id, name, pinned)}
+          checked={isPinned}
+          onChange={() => handleCheckBox(id, name, isPinned)}
         />
-        <RealtyTitle pinned={pinned}>{name}</RealtyTitle>
+        <RealtyTitle isCompleted={isPinned}>{name}</RealtyTitle>
       </CheckInputWrapper>
     </RealtyList>
   );
@@ -64,8 +69,8 @@ const CheckInputWrapper = styled.div`
 `;
 
 const RealtyTitle = styled.span`
-  text-decoration: ${({ isCompleted }) =>
-    isCompleted ? 'line-through' : 'none'};
+  /* text-decoration: ${({ isCompleted }) =>
+    isCompleted ? 'line-through' : 'none'}; */
 `;
 
 const TextInput = styled.input`
